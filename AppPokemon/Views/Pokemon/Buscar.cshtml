@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Buscar";
+}
+
+<a href="/Pokemon/Index?id=@ViewBag.usuario" class="btn btn-success">Regresar a la lista</a>
+
+@if (Model == null)
+{
+    <h1>No se ha encontrado al pokemon</h1>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Imagen</th>
+                <th>FechaCaptura</th>
+
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.Nombre</td>
+                <td>@Model.Tipo</td>
+                <td>@Model.FechaCaptura</td>
+                <td><img src="@Model.Imagen" style="width:50px;height:50px" /></td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+}
